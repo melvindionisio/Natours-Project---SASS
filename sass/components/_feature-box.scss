@@ -1,0 +1,42 @@
+.feature-box {
+  background-color: rgba($color-white, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  transition: all 250ms;
+  outline-offset: 0.5rem;
+
+  &__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    background-image: linear-gradient(
+      to right,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: transform 250ms ease-out;
+  }
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.05);
+    background-color: rgba($color-white, 0.9);
+  }
+  &:hover > &__icon {
+    transform: scale(1.5);
+  }
+  &:hover > [class^="heading-"] {
+    box-shadow: 0 2px 0 $color-primary;
+    transition: all 500ms;
+  }
+}
+.section-features {
+  .row:hover .feature-box:not(:hover) {
+    filter: blur(3px) grayscale(100%);
+    opacity: 0.9;
+  }
+}
